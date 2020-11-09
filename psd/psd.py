@@ -1,5 +1,9 @@
 import numpy as np    
-from scipy.fft import fft    
+try:
+    from scipy.fftpack import fft    
+except:
+    from scipy.fft import fft    
+
 from sklearn.base import TransformerMixin
     
 def psd(X):    
@@ -23,22 +27,21 @@ class PSD(TransformerMixin):
         self.features = None
 
     def fit(X, y=None):
-    """Fit the PSD model with X
+        """Fit the PSD model with X
 
-    Parameters
-    ----------
-    X : array-like, shape(n_samples, n_features)
+        Parameters
+        ----------
+        X : array-like, shape(n_samples, n_features)
 
-    y : None
-        Ignored
-    """
-    
+        y : None
+            Ignored
+        """
         self.samples, self.features = X.shape
         self.corr = np.corrcoef(X,rowvar=False) 
         
-        pass
+    pass
 
-    def transform(X)
+    def transform(X):
         tmp = np.matmul(X,self.corr) 
         tmp = np.abs(fft(np.abs(tmp)))/g 
         tmp = tmp / np.sum(tmp,1)[:,np.newaxis]    
