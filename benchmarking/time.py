@@ -28,4 +28,4 @@ if __name__ == '__main__':
     start = time.time() 
     psd.psd(x.data)
     end = time.time()
-    print('Time taken: {}'.format(str(start-end)))
+    print('Time taken: {}'.format(str(end-start)))
