@@ -12,6 +12,7 @@ def psd(X):
     """    
     s, g = X.shape # samples x genes    
     corr = np.corrcoef(X,rowvar=False) # yields g x g corrcoef matrix ...    
+    np.nan_to_num(corr,copy=False)
     aat = np.matmul(X,corr) # s x g matrix, equivalent to aa' in Trans_PSD.m     
     pst = np.abs(fft(np.abs(aat)))/g # s x g matrix, equivalent to ps'     
     pro_pst = pst / np.sum(pst,1)[:,np.newaxis]    
