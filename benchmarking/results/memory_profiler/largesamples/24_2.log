@@ -1,0 +1,25 @@
+Loading python3/3.8.5
+  Loading requirement: intel-mkl/2020.2.254
+
+------------------------------------------------------------------------
+Job 13714779 has exceeded memory allocation on node gadi-hmem-bdw-0003.gadi.nci.org.au
+Process "bash", pid 537884, rss 3416064, vmem 20779008
+Process "13714779.gadi-p", pid 537932, rss 1945600, vmem 10141696
+Process "python3", pid 537948, rss 857259601920, vmem 885389447168
+------------------------------------------------------------------------
+For more information visit https://opus.nci.org.au/x/SwGRAQ
+------------------------------------------------------------------------
+/local/spool/pbs/mom_priv/jobs/13714779.gadi-pbs.SC: line 13: 537948 Killed                  python3 -m memory_profiler memory_psd_largesample.py
+
+======================================================================================
+                  Resource Usage on 2020-11-23 18:54:06:
+   Job Id:             13714779.gadi-pbs
+   Project:            yr31
+   Exit Status:        137 (Linux Signal 9 SIGKILL Kill, unblockable)
+   Service Units:      21.39
+   NCPUs Requested:    28                     NCPUs Used: 28              
+                                           CPU Time Used: 17:30:03                                   
+   Memory Requested:   800.0GB               Memory Used: 800.0GB         
+   Walltime requested: 04:00:00            Walltime Used: 00:45:50        
+   JobFS requested:    100.0MB                JobFS used: 0B              
+======================================================================================
