@@ -4,7 +4,7 @@ try:
 except:
     from scipy.fft import fft    
 
-from sklearn.base import TransformerMixin
+#from sklearn.base import TransformerMixin
     
 def psd(X):    
     """    
@@ -20,7 +20,7 @@ def psd(X):
     aaat = -(np.mean(Aaat,0)-Aaat)    
     Yt = (aaat - aaat.min(0)[np.newaxis,:])/(aaat.max(0)-aaat.min(0))[np.newaxis,:] # min/max scaling across genes    
     return Yt   
-
+"""
 class PSD(TransformerMixin):
 
     def __init__(self):
@@ -28,7 +28,7 @@ class PSD(TransformerMixin):
         self.features = None
 
     def fit(X, y=None):
-        """Fit the PSD model with X
+        \"""Fit the PSD model with X
 
         Parameters
         ----------
@@ -36,7 +36,7 @@ class PSD(TransformerMixin):
 
         y : None
             Ignored
-        """
+        \"""
         self.samples, self.features = X.shape
         self.corr = np.corrcoef(X,rowvar=False) 
         
@@ -49,3 +49,4 @@ class PSD(TransformerMixin):
         tmp = np.multiply(tmp,np.log2(tmp))    
         tmp = -(np.mean(tmp,0)-tmp)    
         return (tmp - tmp.min(0)[np.newaxis,:])/(tmp.max(0)-tmp.min(0))[np.newaxis,:] # min/max scaling across genes    
+"""
